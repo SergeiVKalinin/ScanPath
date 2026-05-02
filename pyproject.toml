@@ -1,1 +1,32 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
 
+[project]
+name = "instrument-transfer-functions"
+version = "0.1.0"
+description = "Toy models for microscope trajectory transfer functions, scan-path distortion, metrics, and image simulation."
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [
+    {name = "Sergei V. Kalinin"}
+]
+dependencies = [
+    "numpy",
+    "scipy",
+    "matplotlib"
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "build",
+    "jupyter",
+    "ipykernel"
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
